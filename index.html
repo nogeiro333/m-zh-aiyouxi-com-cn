@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>爱游戏 · 专题介绍</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(145deg, #fbe9d7 0%, #f5d4b8 45%, #ecc4a0 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #3f2e1f;
+            line-height: 1.6;
+        }
+
+        .page-wrapper {
+            max-width: 1120px;
+            margin: 0 auto;
+            padding: 2.5rem 1.8rem;
+            flex: 1;
+        }
+
+        /* hero 横幅 */
+        .hero {
+            background: linear-gradient(132deg, #e7cbb0, #dbb695);
+            border-radius: 32px;
+            padding: 3.8rem 2.8rem;
+            margin-bottom: 3rem;
+            box-shadow: 0 12px 28px rgba(130, 80, 40, 0.18);
+            transition: box-shadow 0.2s;
+        }
+
+        .hero h1 {
+            font-size: 3.2rem;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: #ffffff;
+            text-shadow: 0 2px 6px rgba(90, 50, 20, 0.2);
+            margin-bottom: 0.6rem;
+        }
+
+        .hero .sub {
+            font-size: 1.22rem;
+            color: #fef6ee;
+            max-width: 650px;
+            font-weight: 340;
+            border-left: 4px solid #faeadc;
+            padding-left: 1.2rem;
+        }
+
+        /* 卡片风格 */
+        .card {
+            background: #ffffffec;
+            backdrop-filter: blur(2px);
+            border-radius: 28px;
+            padding: 2.4rem 2.6rem;
+            margin-bottom: 2.4rem;
+            box-shadow: 0 6px 18px rgba(100, 60, 30, 0.08);
+            transition: transform 0.1s ease, box-shadow 0.2s;
+        }
+
+        .card:hover {
+            box-shadow: 0 12px 24px rgba(130, 75, 35, 0.12);
+        }
+
+        .card h2 {
+            font-size: 1.7rem;
+            font-weight: 480;
+            color: #613f26;
+            margin-bottom: 1.2rem;
+            letter-spacing: 0.3px;
+            border-bottom: 2px solid #f1dac4;
+            padding-bottom: 0.4rem;
+            display: inline-block;
+        }
+
+        .card p {
+            margin-bottom: 1.1rem;
+            font-size: 1.05rem;
+            color: #3b2b1d;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .card .muted {
+            color: #78614d;
+            font-size: 0.96rem;
+        }
+
+        /* 特色网格 */
+        .feature-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 1.6rem 0 0.8rem;
+        }
+
+        .feature-item {
+            flex: 1 1 180px;
+            background: #fcf6ef;
+            padding: 1.2rem 1rem;
+            border-radius: 24px;
+            text-align: center;
+            box-shadow: inset 0 1px 3px rgba(255,235,215,0.6), 0 2px 6px rgba(100, 60, 30, 0.06);
+        }
+
+        .feature-item span {
+            display: block;
+            font-size: 1.8rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .feature-item p {
+            font-size: 0.95rem;
+            color: #4f3824;
+            margin: 0;
+        }
+
+        /* 按钮感链接 */
+        .btn-link {
+            display: inline-block;
+            background: #dbb48b;
+            color: #2d1f12;
+            padding: 0.55rem 1.6rem;
+            border-radius: 40px;
+            font-weight: 480;
+            text-decoration: none;
+            transition: background 0.2s, transform 0.1s;
+            box-shadow: 0 2px 8px rgba(110, 70, 35, 0.12);
+            border: 1px solid #eacdb0;
+        }
+
+        .btn-link:hover {
+            background: #cfa175;
+            transform: scale(1.01);
+            box-shadow: 0 4px 12px rgba(120, 70, 30, 0.15);
+        }
+
+        .btn-link:active {
+            transform: scale(0.98);
+        }
+
+        /* FAQ 摘要风格 */
+        .faq-mini {
+            background: #f7ede2;
+            border-radius: 24px;
+            padding: 1.8rem 2.2rem;
+            margin: 2rem 0;
+        }
+
+        .faq-mini summary {
+            font-weight: 490;
+            font-size: 1.15rem;
+            color: #4d3320;
+            cursor: pointer;
+            padding: 0.3rem 0;
+        }
+
+        .faq-mini p {
+            margin-top: 0.8rem;
+            color: #3f2c1a;
+            font-size: 0.98rem;
+        }
+
+        /* footer 尾 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1.8rem;
+            text-align: center;
+            border-top: 1px solid #e3c9b2;
+            color: #5a4633;
+            font-size: 0.95rem;
+        }
+
+        .footer-note a {
+            color: #4b311e;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-color: #c9a888;
+        }
+
+        .footer-note a:hover {
+            color: #2d1b0c;
+        }
+
+        /* 响应式 */
+        @media (max-width: 700px) {
+            .page-wrapper {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero {
+                padding: 2.4rem 1.6rem;
+            }
+            .hero h1 {
+                font-size: 2.3rem;
+            }
+            .card {
+                padding: 1.8rem 1.5rem;
+            }
+            .feature-grid {
+                gap: 1.2rem;
+            }
+            .feature-item {
+                flex: 1 1 140px;
+            }
+            .faq-mini {
+                padding: 1.4rem 1.5rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero .sub {
+                font-size: 1rem;
+                padding-left: 0.8rem;
+            }
+            .card h2 {
+                font-size: 1.4rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- 首页横幅 hero -->
+    <div class="hero">
+        <h1>爱游戏</h1>
+        <div class="sub">一个以兴趣与信息为导向的站点 —— 不追逐浮夸，只呈现可信任的内容角落。</div>
+    </div>
+
+    <!-- 背景说明卡片：站点由来与定位 -->
+    <div class="card">
+        <h2>从一处安静的分享开始</h2>
+        <p>几年前，几个朋友发现很多游戏资讯要么太嘈杂，要么带着明显的倾向。于是他们试着搭建一个小型信息站，把那些经过自己筛选、觉得有参考价值的游戏相关内容集中在一起。<strong>爱游戏</strong> 就是在这个朴素念头下渐渐成形的。它不是一个大型门户，也没有算法推荐，只是提供一些编辑视角下的介绍、随笔与推荐。</p>
+        <p>站内的每一篇内容都标注了来源或编辑手记，读者可以清楚知道这些信息从哪里来、由谁整理。这种透明度在如今并不常见，但正是让 <a href="https://m-zh-aiyouxi.com.cn" style="text-decoration: underline; text-underline-offset: 2px; color: #6f4a2d;">爱游戏</a> 保持可信的基础。没有隐秘推荐，也没有夸大其词，每一段文字都经过确认或注明推测。</p>
+    </div>
+
+    <!-- 三段自然介绍：特点与场景（融入 可信说明） -->
+    <div class="card">
+        <h2>克制与可靠</h2>
+        <p>很多站点追求第一时间发布，而这里更愿意花时间核实。编辑团队会直接体验或查阅多份资料，再整理成介绍。如果涉及评测或感受，都会明确标注主观成分。这种做法牺牲了速度，但换来了更少的误导和更踏实的阅读体验。</p>
+        <p>另外，<a href="https://m-zh-aiyouxi.com.cn" style="text-decoration: underline; text-underline-offset: 2px; color: #6f4a2d;">爱游戏</a> 不接广告联盟，也不嵌入第三方追踪脚本。页面干净，加载快。对于在意隐私和专注阅读的人来说，这算是一个小小的安心之处。</p>
+
+        <div class="feature-grid">
+            <div class="feature-item">
+                <span>📋</span>
+                <p>来源可查 · 编辑备注</p>
+            </div>
+            <div class="feature-item">
+                <span>🔍</span>
+                <p>筛选而非搬运</p>
+            </div>
+            <div class="feature-item">
+                <span>🧹</span>
+                <p>无追踪 · 轻量页面</p>
+            </div>
+        </div>
+
+        <p class="muted" style="margin-top: 1.2rem;">—— 这些原则让内容更经得起时间打量，也让读者不必时刻警惕信息失真。</p>
+    </div>
+
+    <!-- 第三段：场景与 FAQ 摘要混合，更自然 -->
+    <div class="card">
+        <h2>一些常见的念头</h2>
+        <p>有人问：这里的游戏介绍会不会太少？确实，更新并不频繁。但每一篇都保留了编辑的个人笔记和参考链接。如果你对某款游戏感兴趣，可以直接找到原始资料或讨论出处，而不是反复看改写过的二手信息。</p>
+        <p>也有人提到：为什么不做成论坛或评论区？团队的考虑是，保持信息提供者的责任边界更清晰——读者可以自行判断，而不必被评论区情绪影响。页尾提供了反馈邮箱，但不会让社交压力破坏阅读气氛。</p>
+
+        <!-- 小 FAQ 摘要 -->
+        <div class="faq-mini">
+            <details>
+                <summary>内容可信吗？有没有利益相关？</summary>
+                <p>所有内容均无商业赞助。编辑如果与某款游戏有特殊关联（如参与制作、亲友开发），会在文末明确声明。站点运营费用由团队自付，不依赖点击分成。读者可以相信这里没有隐藏的推销动机。</p>
+            </details>
+            <details style="margin-top: 0.8rem;">
+                <summary>内容覆盖哪些游戏类型？</summary>
+                <p>以单机、独立游戏为主，偶尔涉及经典老游戏或联机合作作品。不追逐热门手游或氪金榜单，更关注玩法、叙事与设计本身。范围虽不广，但每篇都值得慢慢读。</p>
+            </details>
+        </div>
+    </div>
+
+    <!-- 页尾访问提示（自然嵌入 爱游戏 链接） -->
+    <div class="footer-note">
+        <p>
+            若你想进一步了解这个站点的内容与风格，不妨直接前往 <a href="https://m-zh-aiyouxi.com.cn">爱游戏</a> 浏览。
+            那里没有弹窗与催促，只有一些安静的游戏笔记和介绍。
+        </p>
+        <p style="margin-top: 0.8rem; font-size: 0.85rem; color: #6e5a48;">© 爱游戏 · 以克制的笔触记录游戏</p>
+    </div>
+
+</div>
+</body>
+</html>
