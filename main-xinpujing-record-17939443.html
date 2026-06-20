@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>澳门新葡京 · 信息导览页</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      background: #f5f7fa;
+      color: #1e2a3a;
+      line-height: 1.6;
+    }
+
+    /* 深色头图 hero */
+    .hero {
+      background: linear-gradient(145deg, #0f1a2e 0%, #1b2a41 100%);
+      color: #e8edf5;
+      padding: 64px 24px 56px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-bottom: 12px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 span {
+      color: #d4af37;
+    }
+
+    .hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      font-size: 1.1rem;
+      opacity: 0.8;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero .sub-line {
+      margin-top: 18px;
+      font-size: 0.95rem;
+      border-bottom: 1px solid rgba(212, 175, 55, 0.25);
+      display: inline-block;
+      padding-bottom: 4px;
+      opacity: 0.7;
+    }
+
+    /* 卡片区域 */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 48px 20px 60px;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      font-weight: 500;
+      margin-bottom: 32px;
+      padding-left: 8px;
+      border-left: 5px solid #d4af37;
+      line-height: 1.3;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 28px 24px 32px;
+      box-shadow: 0 12px 28px rgba(0, 0, 0, 0.04), 0 2px 8px rgba(0, 20, 40, 0.06);
+      transition: transform 0.2s ease, box-shadow 0.25s ease;
+      border: 1px solid #eaedf2;
+    }
+
+    .card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 36px rgba(0, 0, 0, 0.06);
+      border-color: #d4af37;
+    }
+
+    .card .emoji-icon {
+      font-size: 2.4rem;
+      display: block;
+      margin-bottom: 8px;
+    }
+
+    .card h3 {
+      font-size: 1.45rem;
+      font-weight: 600;
+      margin-bottom: 12px;
+      color: #0f1a2e;
+    }
+
+    .card p {
+      color: #3f4b5c;
+      font-size: 0.98rem;
+      margin-bottom: 10px;
+    }
+
+    .card ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    .card li {
+      padding: 6px 0 6px 24px;
+      position: relative;
+      font-size: 0.95rem;
+      color: #2c3a4a;
+    }
+
+    .card li::before {
+      content: "·";
+      color: #d4af37;
+      font-weight: 700;
+      position: absolute;
+      left: 6px;
+    }
+
+    /* 适合人群卡片 独有 */
+    .audience-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 6px;
+    }
+
+    .audience-tag {
+      background: #f0f3f8;
+      padding: 8px 18px;
+      border-radius: 40px;
+      font-size: 0.9rem;
+      color: #1e2a3a;
+      border: 1px solid #dce2ec;
+    }
+
+    .audience-tag:hover {
+      background: #e8edf5;
+      border-color: #d4af37;
+    }
+
+    /* 自然链接段落 */
+    .link-block {
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 36px 32px;
+      margin-top: 48px;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.03);
+      border: 1px solid #e2e8f0;
+    }
+
+    .link-block p {
+      font-size: 1.05rem;
+      max-width: 800px;
+      color: #2a384a;
+    }
+
+    .link-block a {
+      color: #b8860b;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 2px solid rgba(184, 134, 11, 0.3);
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .link-block a:hover {
+      color: #8b6307;
+      border-bottom-color: #b8860b;
+    }
+
+    .faq-mini {
+      margin-top: 44px;
+      padding: 20px 0 0;
+      border-top: 1px solid #dce2ec;
+    }
+
+    .faq-mini h4 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      margin-bottom: 16px;
+      color: #0f1a2e;
+    }
+
+    .faq-item {
+      padding: 12px 0;
+      border-bottom: 1px solid #eef1f6;
+    }
+
+    .faq-item:last-child {
+      border-bottom: none;
+    }
+
+    .faq-item strong {
+      display: block;
+      font-weight: 500;
+      color: #1f2d3d;
+      margin-bottom: 6px;
+    }
+
+    .faq-item span {
+      color: #4f5d6e;
+      font-size: 0.95rem;
+    }
+
+    /* 页脚 */
+    .footer-note {
+      text-align: center;
+      padding: 28px 20px;
+      color: #6c7a8a;
+      font-size: 0.85rem;
+      border-top: 1px solid #dce2ec;
+      margin-top: 24px;
+    }
+
+    /* 响应式 */
+    @media (max-width: 640px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+      .container {
+        padding: 28px 16px 40px;
+      }
+      .link-block {
+        padding: 24px 18px;
+      }
+      .section-title {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- 深色头图 -->
+  <header class="hero">
+    <h1>澳门<span>新葡京</span></h1>
+    <p>一个经由长期维护的线上服务访问点，面向需要稳定入口与清晰指引的用户。页面信息经过整理，方便快速了解基本用途与适用场景。</p>
+    <div class="sub-line">信息卡片导览 · 持续更新</div>
+  </header>
+
+  <main class="container">
+
+    <!-- 主视觉卡片 + 用途卡片 -->
+    <div class="card-grid">
+
+      <div class="card">
+        <span class="emoji-icon">🏛️</span>
+        <h3>主视觉 · 访问界面</h3>
+        <p>整个站点围绕清晰、直接的浏览体验设计。首页聚合了常用功能分区与操作入口，布局以内容模块化为主，减少无关干扰。</p>
+        <ul>
+          <li>页面响应式适配，移动端体验流畅</li>
+          <li>信息层级分明，导航逻辑简洁</li>
+          <li>视觉采用深金配色，辨识度高</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="emoji-icon">🎯</span>
+        <h3>常见用途说明</h3>
+        <p>该地址主要用作线上信息查阅及对应服务的快速连接。以下为几类典型使用方式：</p>
+        <ul>
+          <li>获取平台动态与公告</li>
+          <li>快速跳转至对应服务模块</li>
+          <li>了解基础服务说明与规则摘要</li>
+          <li>适用于日常信息浏览与查询</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 适合人群 卡片风格单独成块 -->
+    <div style="margin-top: 32px;">
+      <h2 class="section-title">适合这样的使用者</h2>
+      <div class="audience-list">
+        <span class="audience-tag">习惯先看说明再操作的人</span>
+        <span class="audience-tag">需要稳定访问入口的用户</span>
+        <span class="audience-tag">对界面简洁度有要求</span>
+        <span class="audience-tag">希望快速了解平台框架的新访客</span>
+        <span class="audience-tag">偏好直接、无干扰页面风格</span>
+      </div>
+      <p style="color: #435366; margin-top: 18px; font-size: 0.98rem; padding-left: 4px;">无论你是第一次接触，还是希望获得一个干净的访问起点，这套页面结构都能提供一致的体验。</p>
+    </div>
+
+    <!-- 自然链接段落 + FAQ 摘要 -->
+    <div class="link-block">
+      <p>
+        如果你正在寻找一个结构清晰、信息组织明确的线上访问点，<a href="https://main-xinpujing.com">澳门新葡京</a>是一个已经持续运行较长时间的页面。它不追求花哨的动画或复杂的跳转，而是将核心功能与内容以卡片和列表的形式平铺展示，方便快速定位。
+      </p>
+      <p style="margin-top: 18px;">
+        页面内部也保留了必要的辅助信息区块，例如常见问题摘要、更新提示以及用途分类。整体设计偏向实用主义，适合那些希望直接获取内容而非在界面中反复寻找的用户。
+      </p>
+
+      <div class="faq-mini">
+        <h4>❓ 常见问题摘要</h4>
+        <div class="faq-item">
+          <strong>这个页面主要提供什么？</strong>
+          <span>主要作为信息聚合与访问引导页，汇集了平台的基础说明、功能分类及更新动态，方便快速浏览。</span>
+        </div>
+        <div class="faq-item">
+          <strong>是否适合移动端使用？</strong>
+          <span>页面采用响应式布局，在手机和平板设备上均可正常显示，卡片和列表会自动调整排列。</span>
+        </div>
+        <div class="faq-item">
+          <strong>内容多久更新一次？</strong>
+          <span>根据平台公告与功能调整不定期进行内容维护，保证信息具有参考性。</span>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer-note">
+    信息导览页 · 内容仅供说明参考 · 具体服务以实际页面为准
+  </footer>
+</body>
+</html>
