@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>澳门威尼斯人 · 简明访问指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f2f2f0;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', system-ui, sans-serif;
+            line-height: 1.7;
+            color: #2c3e3f;
+            padding: 2rem 1rem;
+        }
+
+        .page-wrapper {
+            max-width: 820px;
+            margin: 0 auto;
+        }
+
+        /* Hero 区 (简洁) */
+        .hero {
+            background: #ffffff;
+            border-radius: 18px;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.02);
+            padding: 2.8rem 2.2rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(0, 0, 0, 0.04);
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: 0.02em;
+            color: #1e3536;
+            margin-bottom: 0.4rem;
+            border-left: 4px solid #b7a78a;
+            padding-left: 1.2rem;
+        }
+
+        .hero .subhead {
+            font-size: 1rem;
+            color: #5a6c6d;
+            margin-top: 0.6rem;
+            padding-left: 1.6rem;
+            border-left: 1px solid #d6cdbf;
+        }
+
+        /* 卡片区块 */
+        .card {
+            background: #ffffff;
+            border-radius: 16px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03), 0 8px 18px rgba(0, 0, 0, 0.02);
+            padding: 1.8rem 2rem;
+            margin-bottom: 1.6rem;
+            border: 1px solid #eeeeea;
+            transition: box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05), 0 10px 24px rgba(0, 0, 0, 0.03);
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            font-weight: 450;
+            color: #1b3a3b;
+            margin-bottom: 0.9rem;
+            border-bottom: 1px solid #ece7e0;
+            padding-bottom: 0.4rem;
+        }
+
+        .card p {
+            margin-bottom: 1rem;
+            color: #2f4445;
+        }
+
+        .card p:last-child {
+            margin-bottom: 0;
+        }
+
+        .inset-quote {
+            background: #f6f4f0;
+            border-left: 4px solid #b7a78a;
+            padding: 1rem 1.4rem;
+            margin: 1.2rem 0;
+            border-radius: 0 8px 8px 0;
+            font-size: 0.95rem;
+            color: #3d5455;
+        }
+
+        .inset-quote strong {
+            font-weight: 500;
+            color: #1b3536;
+        }
+
+        .faq-item {
+            margin-bottom: 1rem;
+            padding-bottom: 0.8rem;
+            border-bottom: 1px dashed #ddd8d0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .faq-q {
+            font-weight: 500;
+            color: #1b3a3b;
+            margin-bottom: 0.2rem;
+        }
+
+        .faq-a {
+            font-size: 0.95rem;
+            color: #3d5455;
+        }
+
+        .access-note {
+            background: #f6f4f0;
+            border-radius: 12px;
+            padding: 1.2rem 1.6rem;
+            margin-top: 0.6rem;
+            border: 1px solid #e5dfd7;
+            font-size: 0.95rem;
+        }
+
+        a {
+            color: #3d6b6d;
+            text-decoration: none;
+            border-bottom: 1px solid #cdc5b8;
+            transition: border-color 0.15s, color 0.15s;
+        }
+
+        a:hover {
+            color: #1b4e50;
+            border-bottom-color: #8f7e68;
+        }
+
+        /* 响应式 */
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem 0.8rem;
+            }
+            .hero {
+                padding: 1.8rem 1.2rem;
+            }
+            .hero h1 {
+                font-size: 1.6rem;
+                padding-left: 0.8rem;
+            }
+            .hero .subhead {
+                font-size: 0.9rem;
+                padding-left: 1rem;
+            }
+            .card {
+                padding: 1.2rem 1.2rem;
+            }
+            .card h2 {
+                font-size: 1.2rem;
+            }
+            .inset-quote {
+                padding: 0.8rem 1rem;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .hero h1 {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page-wrapper">
+
+    <!-- hero -->
+    <header class="hero">
+        <h1>澳门威尼斯人 · 简明指南</h1>
+        <div class="subhead">一份认真的访问备忘 · 运河、穹顶与闲逛路线</div>
+    </header>
+
+    <!-- 正文卡片 1：导语与基本印象 -->
+    <section class="card">
+        <p>如果你正在计划前往澳门的「威尼斯人」区域，这篇指南或许能帮你少走一些弯路。这里不仅仅是一处综合度假村，更是将意大利水城的风情移植到亚洲的一处大型空间。无论你是第一次造访，还是希望更有效率地安排半天时间，下面的内容都从实际体验出发整理而成。</p>
+        <p>整个区域以室内运河、拱桥和天幕广场为核心，购物、餐饮与展览交织在一起。初访者容易在楼层之间迷失方向——这很正常，因为建筑体量确实不小。我的建议是：先确定自己最想看的几样东西，再慢慢闲逛。</p>
+    </section>
+
+    <!-- 卡片 2：特点与场景 -->
+    <section class="card">
+        <h2>几条实在的观察</h2>
+        <p>运河是真的有水，贡多拉船夫的歌声也是真的。但你不一定非要坐船——站在桥上或者岸边看船经过，视角反而更开阔。室内天幕的光线模拟得不错，但每隔一段时间会有「黄昏」或「夜晚」的切换，拍照时留意一下氛围变化。</p>
+        <p>如果你是第一次来，不妨从大运河购物中心开始，沿着运河方向走，中途会经过不少有意思的橱窗和转角。二层有一些相对安静的走廊，可以避开人流。另外，赌场区域必须年满21岁才能进入，入口处有身份核对，请随身携带证件。</p>
+
+        <div class="inset-quote">
+            <strong>提醒：</strong> 周末及节假日人流量较大，下午2点至5点是高峰时段。如果希望体验更悠闲的散步，建议在上午10点前或晚间8点后前往运河区域。
+        </div>
+
+        <p>餐饮方面，从快餐到精致餐厅都有分布。推荐留意商场内的美食层，选择丰富且价格相对合理。如果想体验正餐，建议提前在手机地图上标记位置，避免临时绕路。</p>
+    </section>
+
+    <!-- 卡片 3：访问提示与FAQ摘要 -->
+    <section class="card">
+        <h2>实用提示 & 常见问题</h2>
+
+        <div class="faq-item">
+            <div class="faq-q">从机场或码头怎么过去比较方便？</div>
+            <div class="faq-a">大多数酒店或度假村提供免费穿梭巴士，也可以利用轻轨或出租车。具体路线建议使用导航应用，并预留15‑20分钟的缓冲时间。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">需要门票吗？</div>
+            <div class="faq-a">公共区域（购物中心、运河、天幕广场）免费开放。部分展览、表演或特殊体验项目需单独购票。</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-q">拍照有限制吗？</div>
+            <div class="faq-a">公共空间允许拍照，但请尊重他人隐私。赌场内部严禁拍摄，留意入口标识。</div>
+        </div>
+
+        <div class="access-note">
+            ⚡ 如果你计划进一步了解详细活动、展览时间或商户信息，可以查阅相关平台上的更新。关于澳门威尼斯人的更多介绍，可以访问 <a href="https://index-venetian.com">澳门威尼斯人</a> 页面，那里有较完整的背景与动态信息。
+        </div>
+    </section>
+
+    <!-- 卡片 4：收束与访问句 -->
+    <section class="card">
+        <p>在出发前，不妨先花几分钟在脑海中把楼层和方向过一遍。记住主要参照物：大运河在中央，天幕广场在北端，赌场入口在底层。不需要把行程排得太满，留出在拱桥边发呆的时间——那才是这座室内水城最舒服的节奏。</p>
+        <p style="margin-top: 1.2rem; padding-top: 0.8rem; border-top: 1px solid #ece7e0; font-size: 0.95rem; color: #5b7071;">希望这份指南能帮助你更轻松地感受澳门威尼斯人。一次好的访问，往往从清晰的预期开始。</p>
+    </section>
+
+</div>
+</body>
+</html>
